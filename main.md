@@ -30,7 +30,7 @@
 
 # Running and package
 
-- basic structure:
+- basic structure recommended:
 
   - contains bin, pkg and src
   - ![basicProjectStructure](imgs/basicProjectStructure.PNG)
