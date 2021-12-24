@@ -31,7 +31,7 @@
 - `n:= 1 == 1`
 - `m:= 1 == 2` common use case
 - everytime you initialize a variable in go, it actually has a zero value. The zero value for go is `false`, therefore by default it's false.
-  - ![primitiveType1](./imgs/primitiveType1.png)
+  - ![primitiveType1](/imgs/primitiveType1.png)
 - Note that the boolean isn't using -1 and 0.etc like js does
 
 ## **NUMERIC TYPES & OPERATIONS** - default value is 0; int, float and complex
