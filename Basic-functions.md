@@ -44,24 +44,25 @@
 
 - `func foo(bar string, baz ...int){}`
   - barz will be a splice
-- ![function1](./imgs/function1.png)
+- ![function1](imgs/function1.PNG)
 - The operation will pack the following variables in a slice and pass it down as a slice
 - this has to be the **last** parameter
 
 ## return values
 
-- To declare the return type: ![function2](./imgs/function2.png)
+- To declare the return type: ![function2](imgs/function2.PNG)
 
-### Return local variable Golang allows the ability to **return a local variable as a pointer** (rare ability) ![function3](./imgs/function3.png)
+### Return local variable Golang allows the ability to **return a local variable as a pointer** (rare ability)
 
+- ![function3](imgs/function3.PNG)
 - Different from other language where the function stack is destroyed after execution, the golang will save the value to the local stack from the function stack, so it will be accessible
 
 ### Name the return value in func declaration
 
 - Name return value so when it reaches the return line, the named variable will be returned implicitly
-  - ![function4](./imgs/function4.png)
+  - ![function4](imgs/function4.PNG)
 - use `(varType1, varType2)` for multiple return values:
-  - ![function5](./imgs/function5.png)
+  - ![function5](imgs/function5.PNG)
   - This can be used to avoid panicing.
   - If no error, `nil` is returned.
 
@@ -79,15 +80,15 @@
 
 ## function as types & variables - functional like js / Ocaml
 
-- ![funcgion6](./imgs/function6.png)
-- ![funcgion7](./imgs/function7.png)
+- ![funcgion6](imgs/function6.PNG)
+- ![funcgion7](imgs/function7.PNG)
 - Note that in this way, if you call the function fro above befor it's defined, then it will cause error
 - You can pass down the function as a parameter in another function
 
 ## **METHODS**
 
 - Methods are functions under certain context
-- ![funcgion7](./imgs/function8.png)
+- ![funcgion7](imgs/function8.PNG)
   - Notice there the type is declared before the function name
   - This can by any type (e.g. int)
 - When calling `g.greet()`, the `greeter` created in the main function is going to be given the name `g`, therefore can have access within the struct obj

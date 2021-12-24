@@ -57,8 +57,8 @@
 
 - `cap(slice)` similar to len(array)
   - the Capacity may be different from the length of underlying array
-- Functions to create 'slices' ![slice1](./imgs/slice1.png)
-  - Note that the slices are still reference-type, therefore if you change the value of the original slice, the slices that contain the corresponding value will also be changed ![slice2](./imgs/slice2.png)
+- Functions to create 'slices' ![slice1](imgs/slice1.PNG)
+  - Note that the slices are still reference-type, therefore if you change the value of the original slice, the slices that contain the corresponding value will also be changed ![slice2](imgs/slice2.PNG)
   - Use the these oprations to pop/remove elements
     - `b := a[:len(a)-1]` remove the last element
     - `b := a[1:]` remove the first element
@@ -80,7 +80,7 @@
   - Direct declaration:
 
     - `name := map[KEY_TYPE]VALUE_TYPE{KEY1:VALUE1...}`
-    - e.g. ![map1](./imgs/map1.png)
+    - e.g. ![map1](imgs/map1.PNG)
 
   - all the key must be of the same type, and all the value must be of the same type
   - **Constraint: the keys MUST be able to compared for equality**. e.g. primitive types, arrays
@@ -93,14 +93,14 @@
   - `make(map[string]int, 10)` the 10 isn't commonly used
   - `MAP[KEY]` returns the value associated and whether the pair was found
     - If you don't have the key inside the map, it will return value 0 of the value type (e.g. 0 if value is int; "" if value is string), which may cause some troubles. It's common pracitce to do the following:
-    - ![map2](./imgs/map2.png)
+    - ![map2](imgs/map2.PNG)
     - The second return value of the `MAP[KEY]` will be false if it's not found.
   - `delete(MAP, KEY)` delete the key-value pair in the map
 - `len(MAP)` return the length
 
 ## **STRUCTS** Similar to C++ struct or class in java
 
-- ![map3](./imgs/map3.png)
+- ![map3](imgs/map3.PNG)
   - unlike arrays and map, the fields can be any type we want
 - structs are value types. When passing structs aronud, you are passing copies around. Like array, if we want to use references, use addresses and pointers.
 - Usually used as type
@@ -119,11 +119,11 @@
   ```
   - To get the values, use dot syntax `varName.FieldName`
   - Positional syntax: you don't need to write out the struct field names when you are declaring an instance
-    - ![struct1](./imgs/struct1.png)
+    - ![struct1](imgs/struct1.PNG)
     - This is usually not recommended because the order are pron to be changed.
     - The fields are generally not strictly recommended
   - Creating on-the-fly (**anonymous**)
-    - ![struct2](./imgs/struct2.png)
+    - ![struct2](imgs/struct2.PNG)
     - first {} defines the structure of the struct, second {} defines the values of the struct
 - Operations
 - Naming conventions: Same as variables.
@@ -133,17 +133,17 @@
 ### **EMBEDDING** - Golang way of 'inheritance' by composition
 
 - Technically, there is no **inheritance** in Golang, but it uses a model to realize the relationship
-- By doing this, the animal struct is embeded in the bird ![struct3](./imgs/struct3.png)
-- In this way, we can initialize the fields in the Animal struct in Bird ![struct4](./imgs/struct4.png)
+- By doing this, the animal struct is embeded in the bird ![struct3](imgs/struct3.PNG)
+- In this way, we can initialize the fields in the Animal struct in Bird ![struct4](imgs/struct4.PNG)
 - It "looks like" the bird is having the fields of Animla, but it's just syntaic sugar.
-- You can declare the Animal struct directly if you already now the value ![struct5](./imgs/struct5.png)
+- You can declare the Animal struct directly if you already now the value ![struct5](imgs/struct5.PNG)
 
 ### **TAGS** - somehow reminds me of styled components
 
 - describe some specific information of a field in struct
-- arglength argument: ![struct6](./imgs/struct6.png)
+- arglength argument: ![struct6](imgs/struct6.PNG)
 - If you need to use key-value pairs, you will need to use column to seperate the key and the value, and the value are typically put in quptation marks.
 - They are not directly accessible. To get the requirements when you are using them, use `reflection` package
-  - ![struct7](./imgs/struct7.png)
+  - ![struct7](imgs/struct7.PNG)
     - get type of struct => get field => get `Tag` property of the field
 - There are validation libraries or frameworks that reads the tags. JSON package some times use this.

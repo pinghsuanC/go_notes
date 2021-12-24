@@ -10,28 +10,28 @@
 
 ## Creation
 
-- long way of creating pointer ![pointer1](./imgs/pointer1.png)
+- long way of creating pointer ![pointer1](imgs/pointer1.PNG)
   - the numeric representation of the address
 
 ## **DEREFERENCE** pointers using **\***
 
-- ![pointer2](./imgs/pointer2.png)
+- ![pointer2](imgs/pointer2.PNG)
 - you can use the dereference to change the value sotred at that address
-  - ![pointer3](./imgs/pointer3.png)
-  - ![pointer4](./imgs/pointer4.png)
+  - ![pointer3](imgs/pointer3.PNG)
+  - ![pointer4](imgs/pointer4.PNG)
 
 ## pointer arithmatic is **NOT ALLOWED** - unlike C
 
-- ![pointer5](./imgs/pointer5.png)
+- ![pointer5](imgs/pointer5.PNG)
 - If you want it, then use `unsafe` package
 
 ## the **`new`** function - use it with struct
 
 - Use it with struct
-  - ![pointer6](./imgs/pointer6.png)
+  - ![pointer6](imgs/pointer6.PNG)
   - The `&` means that it stroes the address of a struct that has one field with value 42 in it
 - with the pointer, you can initialize it with `new()` function. All fields will be initialized to the zero-value of the type
-  - ![pointer7](./imgs/pointer7.png)
+  - ![pointer7](imgs/pointer7.PNG)
 - To get the value of the structs
 
 ## working with **`nil`**
