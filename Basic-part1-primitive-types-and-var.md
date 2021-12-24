@@ -60,11 +60,11 @@
   - `^` exclusive OR
   - `&^` AND NOT
     - true if neighther of the bit has the bit set
-  - Example ![numericOperation1](imgs/numericOperation1.png)
+  - Example ![numericOperation1](imgs/numericOperation1.PNG)
 - built-in bit-shifter (similar to C++)
   - `<<`
   - `>>`
-  - Example ![numericOperation2](imgs/numericOperation2.png)
+  - Example ![numericOperation2](imgs/numericOperation2.PNG)
 
 ### **Floats** - IEEE-754 standard; float(32, 64)
 
@@ -74,7 +74,7 @@
 - `float64` (+-)2.23E^-308 ~ (+-)1.8E^308
 - note that these needs conversion
 - Creating floating numbers: allow the expression of e(float32) and E(float64)
-  - ![floatNumber1](imgs/floatNumber1.png)
+  - ![floatNumber1](imgs/floatNumber1.PNG)
 - Operations
   - `+, -, *, /`
   - there is no reminder (`%`) operator
@@ -86,10 +86,10 @@
 - Operations
   - `+, -, *, /`
   - To decompose the parts, there are two built-in functions
-    - ![complexNumber1](imgs/complexNumber1.png)
+    - ![complexNumber1](imgs/complexNumber1.PNG)
     - real() and imag()
   - To create Mega-complex number
-    - ![complexNumber2](imgs/complexNumber2.png)
+    - ![complexNumber2](imgs/complexNumber2.PNG)
 
 ## Text types
 
@@ -98,16 +98,16 @@
 - In Go, it stands for any UTF8 character, and is an allias of Byte
 - generally immutable
   - We usually can't change the character
-  - ![string3](imgs/string3.png)
+  - ![string3](imgs/string3.PNG)
 - Note that String can't encode every type that's availabe
 - It's similar to lower-level languages where it's treated like an array of characters
-  - asking for the third letter directly, it will give back an integer(uint8): ![string1](imgs/string1.png)
-  - To get the string back, we need type conversion: ![string2](imgs/string2.png)
+  - asking for the third letter directly, it will give back an integer(uint8): ![string1](imgs/string1.PNG)
+  - To get the string back, we need type conversion: ![string2](imgs/string2.PNG)
 - Operations
   - String concatenation
-    - ![string4](imgs/string4.png)
+    - ![string4](imgs/string4.PNG)
   - Converting to a collection of bytes (`byte slices`), which is more flexible
-    - ![string5](imgs/string5.png)
+    - ![string5](imgs/string5.PNG)
 
 ### **RUNE** - UTF32 character, using '', alias of int32, need special package
 
@@ -116,7 +116,7 @@
 - werid type, UTF32 can be up to 32 bits long, but not need to
 - Declaration:
   - `r := 'a' ` Note that it uses single quote
-  - ![rune1](imgs/rune1.png)
+  - ![rune1](imgs/rune1.PNG)
   - It's an alias of int32, rather than a byte collection like string (rune===int32)
 - use special functions from strings package from Golang
 
@@ -140,16 +140,16 @@
 2. Declaring at package level
    - you have to use the full declaration `var i int = 42`
    - you can create a block of variables (like struct)
-     - ![variableBlock](imgs/variableBlock.png)
+     - ![variableBlock](imgs/variableBlock.PNG)
      - There can be multiple variable blocks. Better organization!
 
 ## Redeclaration and shadowing, visibility
 
 - You are not allowed to redeclare a vairable twice in the same scope
-  - ![variableRedeclaration1](imgs/variableRedeclaration1.png)
+  - ![variableRedeclaration1](imgs/variableRedeclaration1.PNG)
 - However it's allowed to shadowing. The declaration and value in the innermost scope is taking precidense
 
-  - ![variableRedeclaration2](imgs/variableRedeclaration2.png)
+  - ![variableRedeclaration2](imgs/variableRedeclaration2.PNG)
 
 - All variables **MUST** be used. If you have a local variable that is declared but not used, that is a **compiled-time error**
 
@@ -178,15 +178,15 @@
 ## Type conversions
 
 - similar to Java, usually there is no implicit type conversion. It's better practice to make type conversion explicit.
-  - ![typeconversion1](imgs/typeConversion1.png)
+  - ![typeconversion1](imgs/typeConversion1.PNG)
 - note that there may be information lost during type conversion
   - `destinationType(variable)`
 - Need to understand the string with Go when converting to String
-  - ![typeconversion2](imgs/typeConversion2.png)
+  - ![typeconversion2](imgs/typeConversion2.PNG)
   - in Go, the string is an allas for a string of bytes
   - in the screenshot, the conversoin is reads "asign value 4 to a type char" and 42 translates to "\*"
   - to convert into String, use `strconv` package
-  - ![typeconversion3](imgs/typeConversion3.png)
+  - ![typeconversion3](imgs/typeConversion3.PNG)
 
 # **CONSTANTS**
 
@@ -205,13 +205,13 @@
 - `const myConst int = 42`
 - note that collectoin types (e.g array) are inherently mutable, therefore you can't create constants with them.
 - They can be shadowed both in value and type
-  - ![const1](imgs/const1.png)
+  - ![const1](imgs/const1.PNG)
 - Operations are the same to primitive variables
 
 ## **UNTYPED CONSTANTS** - rely on compiler's type inference, may have implicit conversion
 
 - use compiler's ability to infer the type for us
-  - ![const2](imgs/const2.png)
+  - ![const2](imgs/const2.PNG)
   - it will replace all instances of a
   - implicit conversion!
 
@@ -221,20 +221,20 @@
 - `const a = iota`
 - iota is a counter when we are creating a enumerate constant
 - create a cont block, as it executes it will assign values to each variable
-  - ![const3](imgs/const3.png)
+  - ![const3](imgs/const3.PNG)
 - if we stop assigning iota after the first one, the compiler is going to infer the pattern of assignment
-  - ![const5](imgs/const5.png)
+  - ![const5](imgs/const5.PNG)
 - If we create other blocks, then they will start over with 0
-  - ![const6](imgs/const6.png)
+  - ![const6](imgs/const6.PNG)
 - note that since it starts with 0, it may collide with the default value of int. To solve this:
   1. use the first iota as error value
-     - ![const7](imgs/const7.png)
+     - ![const7](imgs/const7.PNG)
   2. use `_` variable, the Golang only write-only variable
-     - ![const8](imgs/const8.png)
+     - ![const8](imgs/const8.PNG)
      - it means we don't care and throw it away after compilation, and don't use it
 - It's actually allows primitive operation in const
-  - ![const9](imgs/const9.png)
+  - ![const9](imgs/const9.PNG)
   - it can change the offsset of the
 - Math.exp() won't be availble at compile time. But if you want to do exponentional, you can do it by bit-shifting.
-  - ![const10](imgs/const10.png)
+  - ![const10](imgs/const10.PNG)
   - iota wil increment bytes as well
