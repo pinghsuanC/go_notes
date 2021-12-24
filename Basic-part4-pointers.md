@@ -1,3 +1,5 @@
+## [Jump to main page](./main.md)
+
 # **POINTERS** - like those in C/C++
 
 - [**POINTERS** - like those in C/C++](#pointers---like-those-in-cc)
@@ -39,3 +41,9 @@
 - The zero-value of pointer is`nil`, it will be pinted out as `<nil>`
 
 ## Types with internal pointers
+
+- maps, slices
+
+---
+
+[Jump to main page](./main.md)

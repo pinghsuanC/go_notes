@@ -1,3 +1,5 @@
+## [Jump to main page](./main.md)
+
 # **CONTROL FLOW** for function
 
 - [**CONTROL FLOW** for function](#control-flow-for-function)
@@ -42,3 +44,7 @@
 - used to revofer panics
 - **only useful in deferred functions** for panics
 - current function will not attempt to continue, but higher functions in call stack will
+
+---
+
+[Jump to main page](./main.md)

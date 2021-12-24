@@ -1,3 +1,5 @@
+## [Jump to main page](./main.md)
+
 # Interfaces
 
 - [Interfaces](#interfaces)
@@ -28,3 +30,7 @@
 ## with pointesr
 
 # Some best practices
+
+---
+
+[Jump to main page](./main.md)

@@ -1,3 +1,5 @@
+## [Jump to main page](./main.md)
+
 # **CONDITIONAL STATEMENTS**
 
 - [**CONDITIONAL STATEMENTS**](#conditional-statements)
@@ -121,3 +123,7 @@
   - notice that when printing out string it gives a unicode interpretation. To solve that type convert to string ![for4](imgs/for4.PNG)
 - Channel
   - used for concurrent programming
+
+---
+
+[Jump to main page](./main.md)

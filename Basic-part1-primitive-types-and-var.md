@@ -1,3 +1,5 @@
+## [Jump to main page](./main.md)
+
 # Primitive types, variables and constants
 
 - [Primitive types, variables and constants](#primitive-types-variables-and-constants)
@@ -238,3 +240,7 @@
 - Math.exp() won't be availble at compile time. But if you want to do exponentional, you can do it by bit-shifting.
   - ![const10](imgs/const10.PNG)
   - iota wil increment bytes as well
+
+---
+
+[Jump to main page](./main.md)

@@ -1,3 +1,5 @@
+## [Jump to main page](./main.md)
+
 # **COLLECTIONS**
 
 - [**COLLECTIONS**](#collections)
@@ -147,3 +149,7 @@
   - ![struct7](imgs/struct7.PNG)
     - get type of struct => get field => get `Tag` property of the field
 - There are validation libraries or frameworks that reads the tags. JSON package some times use this.
+
+---
+
+[Jump to main page](./main.md)

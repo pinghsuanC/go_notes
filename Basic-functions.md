@@ -1,3 +1,5 @@
+## [Jump to main page](./main.md)
+
 # **FUNCTIONS**
 
 - [**FUNCTIONS**](#functions)
@@ -95,4 +97,6 @@
 - This is copying by value and won't affect the value outside the method
 - Same as the function parameter, the pointer is more tricky to work with. be aware :)
 
-##
+---
+
+[Jump to main page](./main.md)
