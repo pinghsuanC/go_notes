@@ -33,7 +33,7 @@
 - basic structure recommended:
 
   - contains bin, pkg and src
-  - ![basicProjectStructure](imgs/basicProjectStructure.PNG)
+  - ![basicProjectStructure](imgs/basicProjectStructure1.PNG)
 
 - `go run PATH/\*.go`
   - compile temporarily and run
