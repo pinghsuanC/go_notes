@@ -91,7 +91,7 @@
 
 - Methods are functions under certain context
 - ![funcgion7](imgs/function8.PNG)
-  - Notice there the type is declared before the function name
+  - Notice there the "caller" type is declared before the function name
   - This can by any type (e.g. int)
 - When calling `g.greet()`, the `greeter` created in the main function is going to be given the name `g`, therefore can have access within the struct obj
 - This is copying by value and won't affect the value outside the method

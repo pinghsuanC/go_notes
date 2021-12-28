@@ -11,6 +11,7 @@
 # Credit
 
 - Following [this awsome youtube tutorial by freeCodeCamp](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=4752s) for the basics of golang
+- Interface: [also looked into this video](https://www.youtube.com/watch?v=gfoVLXQ5ujM)
 
 # Jumpy to notes
 
