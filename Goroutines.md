@@ -6,14 +6,14 @@
 - [Creating Go routines - creating **threads**](#creating-go-routines---creating-threads)
   - [**RACE CONDITION** - not good practice](#race-condition---not-good-practice)
   - [Sleep function is not generally recommended](#sleep-function-is-not-generally-recommended)
-- [**SYNCHRONIZATION** - to avoid sleeping](#synchronization---to-avoid-sleeping)
+- [**SYNCHRONIZATION** - how to wait, and how to control r/w of the data](#synchronization---how-to-wait-and-how-to-control-rw-of-the-data)
   - [**WAITGROUPS**](#waitgroups)
-  - [**MUTEXES** & **PARALLELISM**](#mutexes--parallelism)
-  - [**runtime.GOMAXPROCS(num)**](#runtimegomaxprocsnum)
-- [Best practices](#best-practices)
+  - [**MUTEXES** - to protect data access](#mutexes---to-protect-data-access)
+  - [**PARALLELISM** and **runtime.GOMAXPROCS(num)**](#parallelism-and-runtimegomaxprocsnum)
+- [Best practices - be careful](#best-practices---be-careful)
   - [Don't create goroutines in libraries](#dont-create-goroutines-in-libraries)
   - [wen creating a goroutine, know how it will end](#wen-creating-a-goroutine-know-how-it-will-end)
-  - [check for race conditions at compile time - this is too nice of Go](#check-for-race-conditions-at-compile-time---this-is-too-nice-of-go)
+  - [check for race conditions **at compile time** - this is too nice of Go: `go run -race`](#check-for-race-conditions-at-compile-time---this-is-too-nice-of-go-go-run--race)
 
 # Creating Go routines - creating **threads**
 
@@ -112,16 +112,16 @@
 
 ## Sleep function is not generally recommended
 
-# **SYNCHRONIZATION** - to avoid sleeping
+# **SYNCHRONIZATION** - how to wait, and how to control r/w of the data
 
 ## **WAITGROUPS**
 
 - designed to synchronize go routines together
 - ![goroutine1](imgs/goroutine1.PNG)
-  - 0 => initialize a waitgroup `wg`
-  - 1 => `Add(1)` add one routine to be waited
-  - 2 => `Wait()` wait for the goroutine to be executed
-  - 3 => `Done()` deduct 1 routine from waitgroup
+  - initialize a waitgroup `wg`
+  - `Add(1)` add one routine to be waited
+  - `Wait()` wait for the goroutine to be executed
+  - `Done()` deduct 1 routine from waitgroup
     - it will be down to 0 and execute
 - This will take just enough time to finish all routines. This is much better than relying on machine time which is unstable
 - But issue remains when there are many routines:
@@ -131,8 +131,9 @@
     - there is no synchronization of goroutines
 - To correct this, either make waitgroups for these, or use _mutex_
 
-## **MUTEXES** & **PARALLELISM**
+## **MUTEXES** - to protect data access
 
+- `sync.Mutext` and `sync.RWMutex`
 - a "lock" that the application is going to honor
   - lock & unlock
 - protect part of our codes, so everytime only one thing can access the data at a time
@@ -149,26 +150,26 @@
   - this is probably over-kill
   - this is not running parallel.etc, better remove goroutine lol
 
-## **runtime.GOMAXPROCS(num)**
+## **PARALLELISM** and **runtime.GOMAXPROCS(num)**
 
-- it tells you how many operation system threads available now
+- by defulat, go will use CPI threads equal to **availalbe cores**
+- `runtime.GOMAXPROCS(num)` tells you how many operation system threads available now
 - if num = -1, then it doesn't change the value of threads.
-- sometimes it will be faster if you increase this value, but too high may be issue. better tune it in performance test.
+- sometimes it will be faster if you increase this value, but too high may slow it down. better tune it in performance test.
 
-# Best practices
-
-- be careful
+# Best practices - be careful
 
 ## Don't create goroutines in libraries
 
-- let consumer contorl concurrency, unless it returns a channel
+- let consumer contorl concurrency, unless it involves a channel
 
 ## wen creating a goroutine, know how it will end
 
-- avoids subtle memory leaks
+- avoids **subtle memory leaks**
+- usually it's killed as soon as it finishes execution
 - if it's not stopped, it will continue forever
 
-## check for race conditions at compile time - this is too nice of Go
+## check for race conditions **at compile time** - this is too nice of Go: `go run -race`
 
 - To test: `go run -race` command when running the go
 - ![goroutine6](./imgs/goroutine6.PNG)
