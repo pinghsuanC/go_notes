@@ -128,6 +128,7 @@
 
   ```
 
+  - if the conversion doesn't work, then the program will panic
   - value `ok` will be true if the conversion succeeds.
   - Else `ok` will be false and `b` will contain the zero value of the type that you are converting to
     - e.g. if you want to convert a writer to a reader, then `ok` will be false.
@@ -231,6 +232,8 @@
 ## **Do export interfaces for types that will be used by package**
 
 ## **Design functions and methods to receive interfaces whenever possible**
+
+- don't need to go crazy with this, but it will be more flexible
 
 # Info from [other videos](https://www.youtube.com/watch?v=gfoVLXQ5ujM) with more direct examples + assertive type checking wth switch
 

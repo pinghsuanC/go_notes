@@ -4,7 +4,7 @@
 - [Credit](#credit)
 - [Jumpy to notes](#jumpy-to-notes)
   - [Basics](#basics)
-  - [Something _special_ about Go](#something-special-about-go)
+  - [Something _\*special\*_ about Go](#something-special-about-go)
 - [Running and package](#running-and-package)
 - [Random notes](#random-notes)
 
@@ -22,10 +22,11 @@
 - [Conditions and Logics](./Basic-part3-conditional-and-logical.md)
 - [Pointers](./Basic-part4-pointers.md)
 
-## Something _special_ about Go
+## Something _\*special\*_ about Go
 
 - [Function Flow Control](./Function-Control.md)
 - [Interface](./Interface.md)
+- [(Before Goroutine) Review on Threading](./Threading.md)
 - [Goroutines](./Goroutines.md)
 - [Channels](./Channels.md)
 
