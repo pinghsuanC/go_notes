@@ -13,7 +13,16 @@
   - [the empty interface](#the-empty-interface)
   - [type switches - type assertion](#type-switches---type-assertion)
 - [**IMPLEMENTATION OF INTERFACE** - value receiver and pointer receiver have different method sets; pointer receiver set includes value receiver set](#implementation-of-interface---value-receiver-and-pointer-receiver-have-different-method-sets-pointer-receiver-set-includes-value-receiver-set)
-  - [**CONVERSION**](#conversion)
+  - [**VALUE RECEIVERS** - value receivers ONLY](#value-receivers---value-receivers-only)
+  - [**POINTER RECEIVER** - pointer + value receivers](#pointer-receiver---pointer--value-receivers)
+  - [BTL: If any of the method of your type was implemented with pointer receiver, you have to implemente the interface with pointer to the object](#btl-if-any-of-the-method-of-your-type-was-implemented-with-pointer-receiver-you-have-to-implemente-the-interface-with-pointer-to-the-object)
+- [Some best practices for interfaces - Some general rules and guidelines](#some-best-practices-for-interfaces---some-general-rules-and-guidelines)
+  - [**many small interfaces > large ones**](#many-small-interfaces--large-ones)
+  - [**Don't export interfaces for types that will be consumed**](#dont-export-interfaces-for-types-that-will-be-consumed)
+  - [**Do export interfaces for types that will be used by package**](#do-export-interfaces-for-types-that-will-be-used-by-package)
+  - [**Design functions and methods to receive interfaces whenever possible**](#design-functions-and-methods-to-receive-interfaces-whenever-possible)
+- [Info from other videos with more direct examples + assertive type checking wth switch](#info-from-other-videos-with-more-direct-examples--assertive-type-checking-wth-switch)
+  - [Ploymorphism](#ploymorphism)
   - [**ASSERTION** - checking the cases by switch](#assertion---checking-the-cases-by-switch)
   - [Empty interface](#empty-interface)
 
@@ -111,6 +120,7 @@
   - on line 13, wc was converted to a `BufferedWriterCloser Pointer`
 - Line13 is using type conversion. `wc` assigning to bwc as an address of wc
 - ```
+
   var a = TYPE_1
   b, ok := k.(TYPE_2)
 
@@ -155,12 +165,12 @@
 - **but unlike concrete types, interface cares about receiver types**
 - When we are assigning the concrete type to the interface, the variable defined with the interface will hold the **value** of the variable, not the pointer
 
-- ```
+  - ```
     var wc WriterCloser = myWriterCloser{}
 
-  ```
+    ```
 
-  Here, the `WriterCloser` is an interface type, and it holds a concrete object of `myWriterCloser{}`
+    Here, the `WriterCloser` is an interface type, and it holds a concrete object of `myWriterCloser{}`
 
 - the interface will check upon the method sets of the concrete object. The concrete object is the "receiver"
 
