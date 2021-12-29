@@ -1,3 +1,5 @@
+[Jump to main page](./main.md)
+
 # Review on concurency / threading / parallelism
 
 - [Review on concurency / threading / parallelism](#review-on-concurency--threading--parallelism)
@@ -30,3 +32,7 @@
   - _a thread is considered lightweight because it runs within the context of a full-blown program and takes advantage of the resources allocated for that program and the program’s environment._
 - There are some differences between Goroutine and threading:
   - ![goroutine0](imgs/goroutine0.PNG)
+
+---
+
+[Jump to main page](./main.md)
