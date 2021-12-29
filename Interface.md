@@ -11,6 +11,8 @@
   - [It doesn't need to be a struct. Any custome type could be used](#it-doesnt-need-to-be-a-struct-any-custome-type-could-be-used)
 - [**COMPOSING INTERFACES** - by embedding](#composing-interfaces---by-embedding)
   - [the empty interface](#the-empty-interface)
+  - [type switches - type assertion](#type-switches---type-assertion)
+- [**IMPLEMENTATION OF INTERFACE** - value receiver and pointer receiver have different method sets; pointer receiver set includes value receiver set](#implementation-of-interface---value-receiver-and-pointer-receiver-have-different-method-sets-pointer-receiver-set-includes-value-receiver-set)
   - [**CONVERSION**](#conversion)
   - [**ASSERTION** - checking the cases by switch](#assertion---checking-the-cases-by-switch)
   - [Empty interface](#empty-interface)
@@ -82,8 +84,7 @@
 
 - Single-method interface is very common in Go.
 - like struct, _we are embedding the interfaces within other interfaces_ ![interface2](imgs/interface2.PNG)
-
-  - With the above definition, create a composed interface type:
+- With the above definition, create a composed interface type:
 
 - ```
     type *BufferdWriterCloser struct {
@@ -110,7 +111,6 @@
   - on line 13, wc was converted to a `BufferedWriterCloser Pointer`
 - Line13 is using type conversion. `wc` assigning to bwc as an address of wc
 - ```
-
   var a = TYPE_1
   b, ok := k.(TYPE_2)
 
@@ -129,11 +129,16 @@
 - the interface that has no method on it
 - ```
   interface {}
+
   ```
+
 - you can define an interface on-the-fly:
-  ```
+
+- ```
   var myObj interface {} = sth
+
   ```
+
 - problem: in order to do anything that's useful with objects that implment the empty interface, you need to _type conversion_ or use the _reflect_ package to figure out the type
   - e.g. ![emptyInterface1](imgs/emptyInterface1.PNG)
 - usually the empty interface is an intermediate step
@@ -149,10 +154,14 @@
 - when we define _concrete types_ directly and assign method to them, each type has a method set. The method set is the all of the methods **regardless** of the receiver types associated with that type
 - **but unlike concrete types, interface cares about receiver types**
 - When we are assigning the concrete type to the interface, the variable defined with the interface will hold the **value** of the variable, not the pointer
-  - ```
+
+- ```
     var wc WriterCloser = myWriterCloser{}
-    ```
-    Here, the `WriterCloser` is an interface type, and it holds a concrete object of `myWriterCloser{}`
+
+  ```
+
+  Here, the `WriterCloser` is an interface type, and it holds a concrete object of `myWriterCloser{}`
+
 - the interface will check upon the method sets of the concrete object. The concrete object is the "receiver"
 
 ## **VALUE RECEIVERS** - value receivers ONLY
@@ -274,6 +283,7 @@
 
       fmt.Println(p1)
   }
+
   ```
 
 - note that `sal` in `main()` is of both type `human` and `secretAgent`.
@@ -300,6 +310,7 @@
     format.Printlnf("%T\n", y)
 
   }
+
   ```
 
 - Result: ![conversion1](imgs/conversion1.PNG)
@@ -309,7 +320,7 @@
 
 - Generic example: ![interfaceAssertion1](imgs/interfaceAssertion1.PNG)
 - ![interfaceAssertion2](imgs/interfaceAssertion2.PNG)
-  - **Asserting** the variable to the underlying concrete type
+- **Asserting** the variable to the underlying concrete type
 
 ## Empty interface
 
