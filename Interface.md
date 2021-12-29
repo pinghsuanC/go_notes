@@ -15,7 +15,7 @@
 - [**IMPLEMENTATION OF INTERFACE** - value receiver and pointer receiver have different method sets; pointer receiver set includes value receiver set](#implementation-of-interface---value-receiver-and-pointer-receiver-have-different-method-sets-pointer-receiver-set-includes-value-receiver-set)
   - [**VALUE RECEIVERS** - value receivers ONLY](#value-receivers---value-receivers-only)
   - [**POINTER RECEIVER** - pointer + value receivers](#pointer-receiver---pointer--value-receivers)
-  - [BTL: If any of the method of your type was implemented with pointer receiver, you have to implemente the interface with pointer to the object](#btl-if-any-of-the-method-of-your-type-was-implemented-with-pointer-receiver-you-have-to-implemente-the-interface-with-pointer-to-the-object)
+  - [BTL: If any of the method of your type was implemented with pointer receiver, you have to declare the variable assiged to the interface type as a pointer](#btl-if-any-of-the-method-of-your-type-was-implemented-with-pointer-receiver-you-have-to-declare-the-variable-assiged-to-the-interface-type-as-a-pointer)
 - [Some best practices for interfaces - Some general rules and guidelines](#some-best-practices-for-interfaces---some-general-rules-and-guidelines)
   - [**many small interfaces > large ones**](#many-small-interfaces--large-ones)
   - [**Don't export interfaces for types that will be consumed**](#dont-export-interfaces-for-types-that-will-be-consumed)
@@ -214,7 +214,7 @@
   - Now the receiver is a pointer.
 - **the method set of a pointer receiver is the value receiver methods plus the pointer receiver methods**
 
-## BTL: If any of the method of your type was implemented with pointer receiver, you have to implemente the interface with pointer to the object
+## BTL: If any of the method of your type was implemented with pointer receiver, you have to declare the variable assiged to the interface type as a pointer
 
 # Some best practices for interfaces - Some general rules and guidelines
 
