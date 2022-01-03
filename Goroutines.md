@@ -1,8 +1,8 @@
 ## [Jump to main page](./main.md)
 
-# Goroutines - concurrent programming
+# Goroutines - concurrent programming/threading
 
-- [Goroutines - concurrent programming](#goroutines---concurrent-programming)
+- [Goroutines - concurrent programming/threading](#goroutines---concurrent-programmingthreading)
 - [Creating Go routines - creating **threads**](#creating-go-routines---creating-threads)
   - [**RACE CONDITION** - not good practice](#race-condition---not-good-practice)
   - [Sleep function is not generally recommended](#sleep-function-is-not-generally-recommended)
