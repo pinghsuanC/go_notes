@@ -5,13 +5,19 @@
 - [Jumpy to notes](#jumpy-to-notes)
   - [Basics](#basics)
   - [Something _\*special\*_ about Go](#something-special-about-go)
+  - [Restful API](#restful-api)
 - [Running and package](#running-and-package)
 - [Random notes](#random-notes)
 
 # Credit
 
+- Constantly referencing to [go.dev](https://go.dev/)
 - Following [this awsome youtube tutorial by freeCodeCamp](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=4752s) for the basics of golang
-- Interface: [also looked into this video](https://www.youtube.com/watch?v=gfoVLXQ5ujM)
+  - [also looked into this video for interface](https://www.youtube.com/watch?v=gfoVLXQ5ujM)
+- RestfulAPI:
+  - [TutorialEdge](https://www.youtube.com/watch?v=W5b64DXeP0o&t=270s) for Example1
+  - [Traversy Media](https://www.youtube.com/watch?v=SonwZ6MF5BE) for Example2
+  - [go.dev for RESTful APi](https://go.dev/doc/tutorial/web-service-gin)
 
 # Jumpy to notes
 
@@ -29,6 +35,11 @@
 - [(Before Goroutine) Review on Threading](./Threading.md)
 - [Goroutines](./Goroutines.md)
 - [Channels](./Channels.md)
+
+## Restful API
+
+- [Restful API](./RestfulApi.md)
+- [Code for Restful API](./RestfulApi_code/main.go)
 
 # Running and package
 
@@ -48,6 +59,7 @@
 
 # Random notes
 
+- go accepts \`string\` using back ticks, and we can use `""` inside the back ticks
 - printf() substituters
   - `%v` value
   - `%t` type
